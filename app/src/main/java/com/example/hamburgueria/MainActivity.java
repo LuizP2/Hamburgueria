@@ -63,21 +63,21 @@ public class MainActivity extends AppCompatActivity {
     private int getPrecoFinal(TextView qtdItens, CheckBox bacon, CheckBox queijo, CheckBox onion) {
         int preço_final = 0;
         int qtd_itens = Integer.parseInt(qtdItens.getText().toString());
-        int adicionais = checkAdicionais(bacon, queijo, onion);
+        int adicionais = checkAdicionais(qtd_itens,bacon, queijo, onion);
         preço_final = qtd_itens * 20 + adicionais;
         return preço_final;
     }
 
-    private int checkAdicionais(CheckBox bacon, CheckBox queijo, CheckBox onion) {
+    private int checkAdicionais( int qtdItens,CheckBox bacon, CheckBox queijo, CheckBox onion) {
         int res = 0;
         if (bacon.isChecked()) {
-            res += 2;
+            res = res + (qtdItens * 2);
         }
         if (queijo.isChecked()) {
-            res += 2;
+            res = res + (qtdItens * 2);
         }
         if (onion.isChecked()) {
-            res += 3;
+            res = res + (qtdItens * 3);
         }
         return res;
     }
