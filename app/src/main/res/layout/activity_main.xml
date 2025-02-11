@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    >
+
+        <ImageView
+            android:id="@+id/hamburguer"
+            android:layout_width="417dp"
+            android:layout_height="169dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hamburguer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/Pedidotxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="15dp"
+            android:text="Faça seu pedido!"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hamburguer"
+            tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/nomeCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Insira seu nome"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pedidotxt"
+        tools:ignore="HardcodedText" />
+
+    <CheckBox
+        android:id="@+id/checkBacon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bacon"
+        app:layout_constraintTop_toBottomOf="@id/nomeCliente"
+        app:layout_constraintStart_toStartOf="@id/nomeCliente"
+        tools:ignore="HardcodedText" />
+    <CheckBox
+        android:id="@+id/checkQueijo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Queijo"
+        app:layout_constraintTop_toBottomOf="@id/checkBacon"
+        app:layout_constraintStart_toStartOf="@id/nomeCliente"
+        tools:ignore="HardcodedText" />
+    <CheckBox
+        android:id="@+id/checkOnion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Onion Rings"
+        app:layout_constraintTop_toBottomOf="@id/checkQueijo"
+        app:layout_constraintStart_toStartOf="@id/nomeCliente"
+        tools:ignore="HardcodedText"/>
+
+    <TextView
+        android:id="@+id/txtQuantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de itens"
+        app:layout_constraintStart_toStartOf="@id/checkOnion"
+        app:layout_constraintTop_toBottomOf="@id/checkOnion"
+        tools:ignore="HardcodedText"/>
+
+
+    <Button
+        android:id="@+id/btnMenos"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="@id/checkOnion"
+        app:layout_constraintTop_toBottomOf="@id/txtQuantidade"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/qtd_Itens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/btnMenos"
+        app:layout_constraintTop_toBottomOf="@id/txtQuantidade"
+        app:layout_constraintBottom_toBottomOf="@id/btnMenos"
+        app:layout_constraintEnd_toStartOf="@id/btnMais"
+        android:padding="15sp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnMais"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/qtd_Itens"
+        app:layout_constraintTop_toBottomOf="@id/txtQuantidade"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: R$ 0,00"
+        app:layout_constraintTop_toBottomOf="@id/qtd_Itens"
+        app:layout_constraintStart_toStartOf="@id/btnMenos"
+        android:paddingTop="12sp"
+        tools:ignore="HardcodedText"
+        />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp"
+        tools:ignore="HardcodedText"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
